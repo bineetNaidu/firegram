@@ -15,7 +15,8 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
-.title h1 {
+.title h1,
+.auth h1 {
   color: var(--primary);
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -111,4 +112,30 @@ label:hover {
   margin: 60px auto;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.auth > button {
+  padding: 8px 25px;
+  background: var(--primary);
+  border: none;
+  color: var(--secondary);
+  opacity: 1;
+}
+
+.auth > h1:nth-child(2) {
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.auth > button:hover {
+  opacity: 0.5;
+  color: black !important;
 }
