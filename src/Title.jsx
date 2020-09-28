@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Title = () => {
+const Title = ({ user }) => {
+  console.log(user);
   return (
     <div className="title">
       <h1>FireGram</h1>
-      <h2>Your Moments</h2>
+      <h2>Your Moments {user?.name}</h2>
       <p>Create Moment because you own it.</p>
     </div>
   );

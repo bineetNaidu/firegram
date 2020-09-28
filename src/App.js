@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       {user ? (
         <>
-          <Title />
+          <Title user={user} />
           <UploaderForm />
           <ImageGrid setSelectedImg={setSelectedImg} />
           {selectedImg && (
