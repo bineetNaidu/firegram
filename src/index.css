@@ -2,7 +2,7 @@
 
 :root {
   --primary: #efb6b2;
-  --secondary: #4e4e4e;
+  --secondary: #a29d9d;
   --error: #ff4a4a;
 }
 
@@ -10,6 +10,7 @@
 body {
   font-family: 'Noto Serif';
   color: var(--secondary);
+  background: #10000c;
 }
 .App {
   max-width: 960px;
@@ -126,7 +127,6 @@ label:hover {
   padding: 8px 25px;
   background: var(--primary);
   border: none;
-  color: var(--secondary);
   opacity: 1;
 }
 
