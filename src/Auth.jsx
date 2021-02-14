@@ -8,7 +8,11 @@ const Auth = ({ setUser }) => {
     projectAuth
       .signInWithPopup(projectAuthProvider)
       .then((res) => {
-        setUser({ name: res.user.displayName, email: res.user.email });
+        setUser({
+          name: res.user.displayName,
+          email: res.user.email,
+          uid: res.user.uid,
+        });
       })
       .catch((err) => alert(err.message));
   };

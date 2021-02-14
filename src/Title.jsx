@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Title = ({ user }) => {
-  console.log(user);
   return (
     <div className="title">
       <h1>FireGram</h1>
