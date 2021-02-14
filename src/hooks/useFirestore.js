@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { projectFirestore } from '../firebase';
 
 // takes a collection name
-const useFirestore = (collection) => {
+const useFirestore = (collection, userId) => {
   // STATES
   const [docs, setDocs] = useState([]);
 
@@ -10,7 +10,8 @@ const useFirestore = (collection) => {
   useEffect(() => {
     const unsubscribe = projectFirestore
       .collection(collection)
-      .orderBy('createdAt', 'desc')
+      .where('userId', '==', userId)
+      .orderBy('createdAt')
       .onSnapshot((snaps) => {
         let documents = [];
         snaps.forEach((doc) => documents.push({ ...doc.data(), id: doc.id }));
@@ -18,7 +19,7 @@ const useFirestore = (collection) => {
       });
 
     return () => unsubscribe();
-  }, [collection]);
+  }, [collection, userId]);
 
   return { docs };
 };

@@ -10,7 +10,7 @@ const useStorage = (file, userId) => {
   // HOOKS && CONTEXTS
   useEffect(() => {
     // references
-    const storageRef = projectStorage.ref(file.name);
+    const storageRef = projectStorage.ref(`/${userId}/${file.name}`);
     const collectionRef = projectFirestore.collection('images');
 
     storageRef.put(file).on(

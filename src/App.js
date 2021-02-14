@@ -16,7 +16,7 @@ function App() {
         <>
           <Title user={user} />
           <UploaderForm user={user} />
-          <ImageGrid setSelectedImg={setSelectedImg} />
+          <ImageGrid setSelectedImg={setSelectedImg} userId={user.uid} />
           {selectedImg && (
             <Modal url={selectedImg} setSelectedImg={setSelectedImg} />
           )}
